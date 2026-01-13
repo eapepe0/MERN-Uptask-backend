@@ -49,7 +49,7 @@ const corsOptions = {
 };
 
 
-app.use(cors(corsOptionsEstricto))
+app.use(cors(corsOptions))
 
 //* routing
 
