@@ -20,7 +20,7 @@ conectarDB();
 //* lista blanca
 const whitelist = [process.env.FRONTEND_URL];
 
-const corsOptions = {
+const corsOptionsEsticto = {
     origin: function (origin, callback) {
         console.log("Origen :", origin)
         if (whitelist.includes(origin)) {
@@ -32,6 +32,22 @@ const corsOptions = {
         }
     }
 }
+
+const corsOptions = {
+  origin: function (origin, callback) {
+
+    // Permitir requests sin origin (Postman, SSR, Vercel)
+    if (!origin) return callback(null, true);
+
+    if (whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Error de CORS"));
+    }
+  },
+  credentials: true
+};
+
 
 app.use(cors(corsOptions))
 
