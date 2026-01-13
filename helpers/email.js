@@ -1,7 +1,7 @@
 import SibApiV3Sdk from 'sib-api-v3-sdk'
 
 
-export const emailRegistroViejoSMTP = async (datos) => {
+/* export const emailRegistroViejoSMTP = async (datos) => {
     const { nombre, email, token } = datos
 
     const transport = nodemailer.createTransport({
@@ -11,10 +11,10 @@ export const emailRegistroViejoSMTP = async (datos) => {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
         }
-    });
+    }); */
 
     //* informacion del email
-    const info = await transport.sendMail(
+   /*  const info = await transport.sendMail(
         {
             from: '"UpTask - Administrador de Proyectos" <cuentas@uptask.com>',
             to: email,
@@ -27,7 +27,7 @@ export const emailRegistroViejoSMTP = async (datos) => {
 
             <p>Si tu no creaste esta cuenta , puedes ignorar el mensaje</p>`
         })
-}
+} */
 
 export const emailRegistro = async ( datos ) => {
     const { nombre, email, token } = datos
@@ -91,7 +91,7 @@ export const emailOlvidePassword = async (datos) => {
         })
 } 
 
-export const emailOlvidePasswordViejo = async (datos) => {
+/* export const emailOlvidePasswordViejo = async (datos) => {
     const { nombre, email, token } = datos
 
     const transport = nodemailer.createTransport({
@@ -102,9 +102,9 @@ export const emailOlvidePasswordViejo = async (datos) => {
             pass: process.env.EMAIL_PASS
         }
     });
-
+ */
     //* informacion del email
-    const info = await transport.sendMail(
+    /* const info = await transport.sendMail(
         {
             from: '"UpTask - Administrador de Proyectos" <cuentas@uptask.com>',
             to: email,
@@ -117,4 +117,4 @@ export const emailOlvidePasswordViejo = async (datos) => {
 
             <p>Si tu no solicitaste reestablecer tu password , puedes ignorar el mensaje</p>`
         })
-} 
+}  */

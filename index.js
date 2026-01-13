@@ -20,7 +20,7 @@ conectarDB();
 //* lista blanca
 const whitelist = [process.env.FRONTEND_URL];
 
-const corsOptionsEsticto = {
+const corsOptionsEstricto = {
     origin: function (origin, callback) {
         console.log("Origen :", origin)
         if (whitelist.includes(origin)) {
@@ -49,7 +49,7 @@ const corsOptions = {
 };
 
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptionsEstricto))
 
 //* routing
 
